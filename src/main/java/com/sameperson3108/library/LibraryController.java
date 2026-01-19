@@ -2,9 +2,7 @@ package com.sameperson3108.library;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +25,11 @@ public class LibraryController {
     public List<Book> getAllBooks() {
         log.info("getAllBooks");
         return libraryService.getAllBooks();
+    }
+
+    @PostMapping()
+    public Book createBook(@RequestBody Book bookToCreate) {
+        log.info("createBook");
+        return libraryService.createBook(bookToCreate);
     }
 }

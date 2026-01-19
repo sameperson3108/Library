@@ -3,7 +3,7 @@ package com.sameperson3108.library;
 import java.time.LocalDate;
 
 public record Book(
-        Integer id,
+        Long id,
         String title,
         String author,
 
